@@ -6,10 +6,7 @@ public class RepeatBC : MonoBehaviour
 {
     private Vector3 startPos;
     private float repeatWidth;
-    private float highBoundarie = 4.10f;
-    private float lowBoundarie = -4.05f;
-    private float leftBoundarie = -7.82f;
-    private float rightBoundarie = 4.30f;
+    
 
 
     private void Start()

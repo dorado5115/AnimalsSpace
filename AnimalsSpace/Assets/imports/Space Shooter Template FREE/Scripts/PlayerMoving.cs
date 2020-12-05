@@ -19,7 +19,12 @@ public class PlayerMoving : MonoBehaviour {
     [Tooltip("offset from viewport borders for player's movement")]
     public Borders borders;
     Camera mainCamera;
-    bool controlIsActive = true; 
+    bool controlIsActive = true;
+
+    new Vector2 movement;
+    public bool gameOver = false;
+    public Rigidbody2D rb;
+    private float moveSpeed = 10f;
 
     public static PlayerMoving instance; //unique instance of the script for easy access to the script
 
@@ -41,12 +46,19 @@ public class PlayerMoving : MonoBehaviour {
         {
 #if UNITY_STANDALONE || UNITY_EDITOR    //if the current platform is not mobile, setting mouse handling 
 
-            if (Input.GetMouseButton(0)) //if mouse button was pressed       
+
+            if (gameOver == false)
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
+            }
+
+            /*if (Input.GetMouseButton(0)) //if mouse button was pressed       
             {
                 Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); //calculating mouse position in the worldspace
                 mousePosition.z = transform.position.z;
                 transform.position = Vector3.MoveTowards(transform.position, mousePosition, 30 * Time.deltaTime);
-            }
+            }*/
 #endif
 
 #if UNITY_IOS || UNITY_ANDROID //if current platform is mobile, 
@@ -66,6 +78,11 @@ public class PlayerMoving : MonoBehaviour {
                 0
                 );
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     //setting 'Player's' movement borders according to Viewport size and defined offset
