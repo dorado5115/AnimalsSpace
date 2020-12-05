@@ -6,9 +6,8 @@ public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver = false;
     public Rigidbody2D rb;
-    private float moveSpeed = 3f;
+    private float moveSpeed = 5f;
     new Vector2 movement;
-
 
     // Update is called once per frame
     void Update()
