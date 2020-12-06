@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private int game;
-    public Animator anim;
+    public Animator animLevelLoader;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator Loadlevel(int level)
     {
-        anim.SetTrigger("start");
+        animLevelLoader.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(level);
     }
