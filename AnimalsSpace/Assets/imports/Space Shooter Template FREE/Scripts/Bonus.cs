@@ -14,4 +14,8 @@ public class Bonus : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+
+    //making a better game
+
 }
