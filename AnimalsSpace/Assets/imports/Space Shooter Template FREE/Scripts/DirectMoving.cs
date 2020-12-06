@@ -13,6 +13,6 @@ public class DirectMoving : MonoBehaviour {
     //moving the object with the defined speed
     private void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime); 
+        transform.Translate(Vector3.up * speed * Time.deltaTime); 
     }
 }

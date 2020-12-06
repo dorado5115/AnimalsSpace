@@ -63,24 +63,24 @@ public class PlayerShooting : MonoBehaviour {
         switch (weaponPower) // according to weapon power 'pooling' the defined anount of projectiles, on the defined position, in the defined rotation
         {
             case 1:
-                CreateLazerShot(projectileObject, guns.centralGun.transform.position, Vector3.zero);
+                CreateLazerShot(projectileObject, guns.centralGun.transform.position, new Vector3(0, 0, -90)); //vector3 (0,0, -90)
                 guns.centralGunVFX.Play();
                 break;
             case 2:
-                CreateLazerShot(projectileObject, guns.rightGun.transform.position, Vector3.zero);
+                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -90));
                 guns.leftGunVFX.Play();
-                CreateLazerShot(projectileObject, guns.leftGun.transform.position, Vector3.zero);
+                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, -90));
                 guns.rightGunVFX.Play();
                 break;
             case 3:
-                CreateLazerShot(projectileObject, guns.centralGun.transform.position, Vector3.zero);
+                CreateLazerShot(projectileObject, guns.centralGun.transform.position, new Vector3(0, 0, -90));
                 CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -5));
                 guns.leftGunVFX.Play();
                 CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, 5));
                 guns.rightGunVFX.Play();
                 break;
             case 4:
-                CreateLazerShot(projectileObject, guns.centralGun.transform.position, Vector3.zero);
+                CreateLazerShot(projectileObject, guns.centralGun.transform.position, new Vector3(0, 0, -90));
                 CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -5));
                 guns.leftGunVFX.Play();
                 CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, 5));

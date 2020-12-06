@@ -17,6 +17,28 @@ public class Projectile : MonoBehaviour {
     [Tooltip("Whether the projectile is destroyed in the collision, or not")]
     public bool destroyedByCollision;
 
+    //projectile follows player
+    private Transform player;
+    private Vector2 target;
+    public float speed;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        target = new Vector2(player.position.x, player.position.y);
+    }
+
+    private void Update()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+        if(transform.position.x == target.x && transform.position.y == target.y)
+        {
+            Destruction();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) //when a projectile collides with another object
     {
         if (enemyBullet && collision.tag == "Player") //if anoter object is 'player' or 'enemy sending the command of receiving the damage
