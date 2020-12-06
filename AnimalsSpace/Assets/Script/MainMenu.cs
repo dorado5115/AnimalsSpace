@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private int game;
+    private int game, thisScene;
     public Animator animLevelLoader;
 
     // Start is called before the first frame update
     void Start()
     {
         game = SceneManager.GetActiveScene().buildIndex + 1;
+        thisScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void PlayGame()
@@ -24,6 +25,13 @@ public class MainMenu : MonoBehaviour
         Debug.Log("quitt");
         Application.Quit();
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(thisScene);
+        Time.timeScale = 1f;
+    }
+
 
     IEnumerator Loadlevel(int level)
     {

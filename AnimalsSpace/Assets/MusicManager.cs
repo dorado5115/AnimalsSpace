@@ -8,6 +8,9 @@ public class MusicManager : MonoBehaviour
     AudioSource audiosource;
     public bool PlayerDeath = false;
 
+    //GAMEOVER
+    public GameObject gameOverMenu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class MusicManager : MonoBehaviour
     IEnumerator Stop()
     {
         yield return new WaitForSeconds(1.2F);
+        gameOverMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 }
