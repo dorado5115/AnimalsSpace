@@ -62,7 +62,7 @@ public class Wave : MonoBehaviour {
         for (int i = 0; i < count; i++) 
         {
             GameObject newEnemy;
-            newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length - 1)], enemies[Random.Range(0, enemies.Length - 1)].transform.position, Quaternion.identity);
+            newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length)], enemies[Random.Range(0, enemies.Length)].transform.position, Quaternion.identity);
             FollowThePath followComponent = newEnemy.GetComponent<FollowThePath>(); 
             followComponent.path = pathPoints;         
             followComponent.speed = speed;        
