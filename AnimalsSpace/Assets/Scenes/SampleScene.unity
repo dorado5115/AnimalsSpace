@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 27454169}
   - component: {fileID: 27454170}
   - component: {fileID: 27454171}
+  - component: {fileID: 27454172}
   m_Layer: 0
   m_Name: Music Manager
   m_TagString: Untagged
@@ -528,6 +529,25 @@ MonoBehaviour:
   audiosource: {fileID: 0}
   PlayerDeath: 0
   gameOverMenu: {fileID: 1064516671}
+--- !u!95 &27454172
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27454168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ba2391286660cb4080ad20e4da36de4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &28987792
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animLevelLoader: {fileID: 0}
+  music: {fileID: 0}
 --- !u!1 &208310938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,7 +2458,7 @@ PrefabInstance:
     - target: {fileID: 977803052687976262, guid: 7415029e93220ab48914cc85ef938d6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 977803052687976263, guid: 7415029e93220ab48914cc85ef938d6d,
         type: 3}

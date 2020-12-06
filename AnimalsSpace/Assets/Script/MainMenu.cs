@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     private int game, thisScene;
     public Animator animLevelLoader;
+    public Animator music;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator Loadlevel(int level)
     {
         animLevelLoader.SetTrigger("Start");
+        music.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(level);
     }
