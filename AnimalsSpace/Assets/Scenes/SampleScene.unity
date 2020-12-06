@@ -359,6 +359,11 @@ PrefabInstance:
       propertyPath: finishedWave
       value: 
       objectReference: {fileID: 1064516671}
+    - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
+        type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 27454171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01cf4a33fc66cde4abc060ccfeadeb5a, type: 3}
 --- !u!1 &27454168
@@ -371,6 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 27454169}
   - component: {fileID: 27454170}
+  - component: {fileID: 27454171}
   m_Layer: 0
   m_Name: Music Manager
   m_TagString: Untagged
@@ -406,7 +412,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.359
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -488,6 +494,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &27454171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27454168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a8b8baec45764ea7db6ca0ebc63e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: a0245aedbc056a447b5b5fb45767a320, type: 3}
+  PlayerDeath: 0
 --- !u!1 &28987792
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +862,11 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 1982891002}
+    - target: {fileID: 114960433178452790, guid: 8e33fda0c220936498f5288af83d7450,
+        type: 3}
+      propertyPath: musicMaganer
+      value: 
+      objectReference: {fileID: 27454171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e33fda0c220936498f5288af83d7450, type: 3}
 --- !u!1 &383494855
@@ -1598,12 +1623,12 @@ GameObject:
   - component: {fileID: 1064516674}
   - component: {fileID: 1064516673}
   m_Layer: 5
-  m_Name: FinishedWave
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1064516672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2456,26 +2481,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.509434, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: fbd9c7cdf1956c648bfc085415aee37d, type: 3}
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 70
+    m_MaxSize: 90
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W A V E   F I N I S H E D
+  m_Text: G A M E  O V E R
 --- !u!222 &1740940532
 CanvasRenderer:
   m_ObjectHideFlags: 0

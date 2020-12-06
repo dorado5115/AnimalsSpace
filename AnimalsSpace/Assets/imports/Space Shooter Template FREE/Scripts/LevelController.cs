@@ -29,17 +29,23 @@ public class LevelController : MonoBehaviour {
 
     Camera mainCamera;
 
+    //death
+    //public MusicManager musicManager;
 
     private void Start()
     {
         mainCamera = Camera.main;
-        //for each element in 'enemyWaves' array creating coroutine which generates the wave
-        for (int i = 0; i<enemyWaves.Length; i++) 
+        /*if(musicManager.PlayerDeath == true)
         {
-            StartCoroutine(CreateEnemyWave(enemyWaves[i].timeToStart, enemyWaves[i].wave));
-        }
-        StartCoroutine(PowerupBonusCreation());
-        StartCoroutine(PlanetsCreation());
+        }*/
+            //for each element in 'enemyWaves' array creating coroutine which generates the wave
+            for (int i = 0; i<enemyWaves.Length; i++) 
+            {
+                StartCoroutine(CreateEnemyWave(enemyWaves[i].timeToStart, enemyWaves[i].wave));
+            }
+            StartCoroutine(PowerupBonusCreation());
+            StartCoroutine(PlanetsCreation());
+
     }
 
 

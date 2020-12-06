@@ -10,9 +10,12 @@ public class CountDownTimer : MonoBehaviour
 
     [SerializeField] Text countDownText;
 
+    //playerdeath
+   // public MusicManager musicManager;
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         currentTime = startingTime;
         StartCoroutine(countDownSlow());
     }
@@ -20,12 +23,14 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        countDownText.text = "T I M E   T O   N E X T   W A V E: " + currentTime.ToString();
-        if(currentTime == 0)
+        /*if(musicManager.PlayerDeath == true)
         {
-            currentTime = 30f;
-        }
+        }*/
+            countDownText.text = "T I M E   T O   N E X T   W A V E: " + currentTime.ToString();
+            if(currentTime == 0)
+            {
+                currentTime = 30f;
+            }
 
     }
 

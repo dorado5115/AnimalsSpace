@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
 {
     public GameObject destructionFX;
 
-    public static Player instance; 
+    public static Player instance;
+
+    public MusicManager musicMaganer;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     void Destruction()
     {
         Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
+        musicMaganer.PlayerDeath = true;
         Destroy(gameObject);
     }
 }
