@@ -28,6 +28,7 @@ public class PlayerMoving : MonoBehaviour {
 
     public static PlayerMoving instance; //unique instance of the script for easy access to the script
 
+
     private void Awake()
     {
         if (instance == null)
@@ -45,10 +46,9 @@ public class PlayerMoving : MonoBehaviour {
         if (controlIsActive)
         {
 #if UNITY_STANDALONE || UNITY_EDITOR    //if the current platform is not mobile, setting mouse handling 
-
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            
+
 
             /*if (Input.GetMouseButton(0)) //if mouse button was pressed       
             {

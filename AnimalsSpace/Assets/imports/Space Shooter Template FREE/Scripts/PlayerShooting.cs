@@ -32,6 +32,7 @@ public class PlayerShooting : MonoBehaviour {
     [HideInInspector] public int maxweaponPower = 4; 
     public static PlayerShooting instance;
 
+ 
     private void Awake()
     {
         if (instance == null)
@@ -56,6 +57,7 @@ public class PlayerShooting : MonoBehaviour {
             }
         }
     }
+
 
     //method for a shot
     void MakeAShot() 

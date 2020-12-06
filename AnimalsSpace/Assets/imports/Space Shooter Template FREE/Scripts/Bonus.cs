@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Bonus : MonoBehaviour {
 
@@ -16,6 +18,5 @@ public class Bonus : MonoBehaviour {
     }
 
 
-    //making a better game
-
+    
 }

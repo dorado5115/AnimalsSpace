@@ -138,7 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bce8ed9b64f39c44bdd9d3b9f6debe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1373690366928948, guid: fdaaab53a8b4c0143b19d2a2e4007e44, type: 3}
+  enemies:
+  - {fileID: 6858318083857594966, guid: 44b4622e58109ea4cbbddc9e95644edf, type: 3}
+  - {fileID: 1373690366928948, guid: fdaaab53a8b4c0143b19d2a2e4007e44, type: 3}
   count: 18
   speed: 20
   timeBetween: 0.5

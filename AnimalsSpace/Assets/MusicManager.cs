@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public AudioClip deathSound;
-    AudioSource audiosource;
+    public AudioSource audiosource;
     public bool PlayerDeath = false;
 
     //GAMEOVER

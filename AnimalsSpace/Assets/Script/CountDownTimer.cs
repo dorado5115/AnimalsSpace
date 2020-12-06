@@ -6,12 +6,10 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour
 {
     public float currentTime = 0f;
-    public float startingTime = 32f;
+    public float startingTime = 30f;
 
     [SerializeField] Text countDownText;
 
-    //playerdeath
-   // public MusicManager musicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -22,24 +20,23 @@ public class CountDownTimer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        /*if(musicManager.PlayerDeath == true)
+    {        
+        countDownText.text = "T I M E   T O   N E X T   W A V E: " + currentTime.ToString();
+        if(currentTime == 0)
         {
-        }*/
-            countDownText.text = "T I M E   T O   N E X T   W A V E: " + currentTime.ToString();
-            if(currentTime == 0)
-            {
-                currentTime = 30f;
-            }
+            currentTime = 30f;
+        }
 
     }
 
     IEnumerator countDownSlow()
     {
-        while (currentTime > 0)
+        while (currentTime > -1)
         {
             yield return new WaitForSeconds(1f);
             currentTime--;
         }
+        
     }
+
 }
