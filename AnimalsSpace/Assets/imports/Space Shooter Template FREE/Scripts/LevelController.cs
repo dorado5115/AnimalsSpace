@@ -27,7 +27,12 @@ public class LevelController : MonoBehaviour {
     public float planetsSpeed;
     List<GameObject> planetsList = new List<GameObject>();
 
-    Camera mainCamera;   
+    Camera mainCamera;
+
+    //list of enemies on the wave
+    public GameObject[] enemies;
+    public GameObject finishedWave;
+    public bool firstWave = true;
 
     private void Start()
     {
@@ -40,7 +45,12 @@ public class LevelController : MonoBehaviour {
         StartCoroutine(PowerupBonusCreation());
         StartCoroutine(PlanetsCreation());
     }
-    
+
+    private void Update()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
     //Create a new wave after a delay
     IEnumerator CreateEnemyWave(float delay, GameObject Wave) 
     {
@@ -48,6 +58,8 @@ public class LevelController : MonoBehaviour {
             yield return new WaitForSeconds(delay);
         if (Player.instance != null)
             Instantiate(Wave);
+
+        //notas
     }
 
     //endless coroutine generating 'levelUp' bonuses. 

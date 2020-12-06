@@ -74,19 +74,19 @@ public class PlayerShooting : MonoBehaviour {
                 break;
             case 3:
                 CreateLazerShot(projectileObject, guns.centralGun.transform.position, new Vector3(0, 0, -90));
-                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -5));
+                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -95));
                 guns.leftGunVFX.Play();
-                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, 5));
+                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, -85));
                 guns.rightGunVFX.Play();
                 break;
             case 4:
                 CreateLazerShot(projectileObject, guns.centralGun.transform.position, new Vector3(0, 0, -90));
-                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -5));
+                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -95));
                 guns.leftGunVFX.Play();
-                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, 5));
+                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, -85));
                 guns.rightGunVFX.Play();
-                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, 15));
-                CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, -15));
+                CreateLazerShot(projectileObject, guns.leftGun.transform.position, new Vector3(0, 0, -75));
+                //CreateLazerShot(projectileObject, guns.rightGun.transform.position, new Vector3(0, 0, 105));
                 break;
         }
     }
