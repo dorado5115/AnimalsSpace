@@ -22,12 +22,17 @@ public class Enemy : MonoBehaviour {
     [HideInInspector] public float shotTimeMin, shotTimeMax; //max and min time for shooting from the beginning of the path
     #endregion
 
-    //follow player
-    
+    //camShake
+    private shake shake;
+
+    //score
+    public GameObject points;
 
     private void Start()
     {
         Invoke("ActivateShooting", Random.Range(shotTimeMin, shotTimeMax));
+
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<shake>();
     }
 
     //coroutine making a shot
@@ -44,7 +49,11 @@ public class Enemy : MonoBehaviour {
     {
         health -= damage;           //reducing health for damage value, if health is less than 0, starting destruction procedure
         if (health <= 0)
+        {
+            shake.CameraShake();
+            score.scoreValue += 100;
             Destruction();
+        }    
         else
             Instantiate(hitEffect,transform.position,Quaternion.identity,transform);
     }    
@@ -64,7 +73,8 @@ public class Enemy : MonoBehaviour {
     //method of destroying the 'Enemy'
     void Destruction()                           
     {        
-        Instantiate(destructionVFX, transform.position, Quaternion.identity); 
+        Instantiate(destructionVFX, transform.position, Quaternion.identity);
+        Instantiate(points, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -29,7 +29,13 @@ public class MainMenu : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(thisScene);
+        score.scoreValue = 00;
         Time.timeScale = 1f;
+    }
+
+    public void InstructionsUI()
+    {
+
     }
 
 

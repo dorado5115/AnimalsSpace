@@ -16,6 +16,7 @@ TagManager:
   - Rocket
   - player
   - Background
+  - ScreenShake
   layers:
   - Default
   - TransparentFX

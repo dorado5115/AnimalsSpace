@@ -22,11 +22,16 @@ public class Projectile : MonoBehaviour {
     private Vector2 target;
     public float speed;
 
+    //camerashake
+   // private shake shake;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector2(player.position.x, player.position.y);
+
+        //shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<shake>();
     }
 
     private void Update()
@@ -50,6 +55,7 @@ public class Projectile : MonoBehaviour {
         else if (!enemyBullet && collision.tag == "Enemy")
         {
             collision.GetComponent<Enemy>().GetDamage(damage);
+            //shake.CameraShake();
             if (destroyedByCollision)
                 Destruction();
         }
