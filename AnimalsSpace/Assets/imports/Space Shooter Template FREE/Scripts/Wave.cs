@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// This script generates an enemy wave. It defines how many enemies will be emerging, their speed and emerging interval. 
@@ -21,8 +22,8 @@ public class Shooting
 public class Wave : MonoBehaviour {
 
     #region FIELDS
-    [Tooltip("Enemy's prefab")]
-    public GameObject enemy;
+    [Tooltip("Enemy's prefab")]//vamo a hacerlo en el array
+    public GameObject[] enemies;
 
     [Tooltip("a number of enemies in the wave")]
     public int count;
@@ -50,6 +51,7 @@ public class Wave : MonoBehaviour {
     public bool testMode;
     #endregion
 
+
     private void Start()
     {
         StartCoroutine(CreateEnemyWave()); 
@@ -60,7 +62,7 @@ public class Wave : MonoBehaviour {
         for (int i = 0; i < count; i++) 
         {
             GameObject newEnemy;
-            newEnemy = Instantiate(enemy, enemy.transform.position, Quaternion.identity);
+            newEnemy = Instantiate(enemies[Random.Range(0, enemies.Length - 1)], enemies[Random.Range(0, enemies.Length - 1)].transform.position, Quaternion.identity);
             FollowThePath followComponent = newEnemy.GetComponent<FollowThePath>(); 
             followComponent.path = pathPoints;         
             followComponent.speed = speed;        
