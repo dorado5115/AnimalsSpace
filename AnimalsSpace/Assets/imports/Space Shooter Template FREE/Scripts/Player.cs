@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
-    public MusicManager musicMaganer;
+    public MusicBoss musicMaganer;
 
     //shake
     private shake shake;

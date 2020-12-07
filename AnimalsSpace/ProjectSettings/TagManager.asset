@@ -18,6 +18,7 @@ TagManager:
   - Background
   - ScreenShake
   - canvas
+  - music
   layers:
   - Default
   - TransparentFX
