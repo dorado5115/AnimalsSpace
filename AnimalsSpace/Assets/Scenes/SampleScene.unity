@@ -638,9 +638,9 @@ Canvas:
   m_GameObject: {fileID: 28987792}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 942789316}
+  m_PlaneDistance: 0.8
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1357,7 +1357,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.000061035156, y: -31.99997}
-  m_SizeDelta: {x: 276.30347, y: 98.28955}
+  m_SizeDelta: {x: 421.34082, y: 125.506134}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &473207261
 MonoBehaviour:
@@ -1379,13 +1379,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fbd9c7cdf1956c648bfc085415aee37d, type: 3}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: e49f4821db272440eba385a60bdc3996, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 48
-    m_Alignment: 4
+    m_MaxSize: 60
+    m_Alignment: 8
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1515,8 +1515,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -20}
-  m_SizeDelta: {x: 765.016, y: 96.917206}
+  m_AnchoredPosition: {x: -1.7999878, y: 55.728638}
+  m_SizeDelta: {x: 692.05237, y: 96.917206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556430531
 MonoBehaviour:
@@ -1538,13 +1538,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fbd9c7cdf1956c648bfc085415aee37d, type: 3}
-    m_FontSize: 37
+    m_Font: {fileID: 12800000, guid: e49f4821db272440eba385a60bdc3996, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1593,8 +1593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.000032425, y: 74}
+  m_SizeDelta: {x: 701.6334, y: 162.37677}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &883483484
 GameObject:
@@ -1680,6 +1680,83 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 22667697}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &942789311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942789310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 93271f7ab93734cd58cf43dd89e3b6bb, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &942789312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942789310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 942789317}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!95 &942789315
 Animator:
   serializedVersion: 3
@@ -1699,6 +1776,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!20 &942789316 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20749257262812270, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 22667697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &942789317 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4868786349923552, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 22667697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &968835847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,8 +3155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -24}
-  m_SizeDelta: {x: 765.016, y: 96.917206}
+  m_AnchoredPosition: {x: -1.7999878, y: -41.188538}
+  m_SizeDelta: {x: 972.0049, y: 96.917206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635864271
 MonoBehaviour:
@@ -3089,19 +3178,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fbd9c7cdf1956c648bfc085415aee37d, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: e49f4821db272440eba385a60bdc3996, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 48
-    m_Alignment: 4
+    m_MaxSize: 80
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W A V E S   T O   B I R D   O F   W I S D O M
+  m_Text: WAVES LEFT TO REACH THE BIRD OF WISDOM
 --- !u!222 &1635864272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3461,7 +3550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -40.999878, y: -31.99997}
+  m_AnchoredPosition: {x: -51.178, y: -48.692}
   m_SizeDelta: {x: 439.4806, y: 98.2896}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1839965183
@@ -3484,19 +3573,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fbd9c7cdf1956c648bfc085415aee37d, type: 3}
-    m_FontSize: 38
+    m_Font: {fileID: 12800000, guid: e49f4821db272440eba385a60bdc3996, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 48
-    m_Alignment: 4
+    m_MaxSize: 60
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'S C O R E: 00'
+  m_Text: 'SCORE: 00'
 --- !u!222 &1839965184
 CanvasRenderer:
   m_ObjectHideFlags: 0
