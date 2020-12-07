@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicBoss : MonoBehaviour
 {
-    public AudioSource audiosource;
+    private AudioSource audiosource;
     public AudioClip deathSound;
 
     public bool PlayerDeath = false;
@@ -26,7 +26,7 @@ public class MusicBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerShooting.weaponPower = 0;
+        //playerShooting.weaponPower = 0;
 
         if (PlayerDeath == true)
         {

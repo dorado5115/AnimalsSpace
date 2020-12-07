@@ -9,7 +9,8 @@ public class Boss : MonoBehaviour
 
     #region FIELDS
     [Tooltip("Health points in integer")]
-    public int health;
+    public int health = 0;
+    public int maxHealth = 200;
 
     [Tooltip("VFX prefab generating after destruction")]
     public GameObject destructionVFX;
@@ -24,9 +25,14 @@ public class Boss : MonoBehaviour
     //laser
     public GameObject laser;
 
+    //healthbar
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         //animacion de entrada
         audio = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
     }
@@ -40,12 +46,18 @@ public class Boss : MonoBehaviour
     public void GetDamage(int damage)
     {
         health -= damage;           //reducing health for damage value, if health is less than 0, starting destruction procedure
+
+        healthBar.SetHealth(health);
+
         if (health <= 0)
         {
             Destruction();
         }
         else
-            Instantiate(hitEffect, transform.position, Quaternion.identity, transform);
+        {
+
+        }
+           // Instantiate(hitEffect, transform.position, Quaternion.identity, transform);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

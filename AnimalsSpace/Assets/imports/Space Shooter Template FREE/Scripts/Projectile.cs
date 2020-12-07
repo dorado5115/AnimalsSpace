@@ -59,6 +59,12 @@ public class Projectile : MonoBehaviour {
             if (destroyedByCollision)
                 Destruction();
         }
+        else if (!enemyBullet && collision.tag == "Boss")
+        {
+            collision.GetComponent<Boss>().GetDamage(damage);
+            if (destroyedByCollision)
+                Destruction();
+        }
     }
 
     void Destruction() 
