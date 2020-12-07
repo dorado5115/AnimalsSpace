@@ -29,14 +29,19 @@ public class LevelController : MonoBehaviour {
 
     Camera mainCamera;
 
+    //BOSS
+    private MainMenu mainMenu;
 
 
     private void Start()
     {
         mainCamera = Camera.main;
+        mainMenu = GameObject.FindGameObjectWithTag("canvas").GetComponent<MainMenu>();
 
-            //for each element in 'enemyWaves' array creating coroutine which generates the wave
 
+        mainMenu.BossLevel();
+
+        //for each element in 'enemyWaves' array creating coroutine which generates the wave
         for (int i = 0; i < enemyWaves.Length; i++)
         {
             StartCoroutine(CreateEnemyWave(enemyWaves[i].timeToStart, enemyWaves[i].wave));

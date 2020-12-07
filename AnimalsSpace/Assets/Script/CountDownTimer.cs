@@ -10,22 +10,42 @@ public class CountDownTimer : MonoBehaviour
 
     [SerializeField] Text countDownText;
 
+    //waves
+    public float currentWave = 0f;
+    public float startingWave = 5f;
+
+    [SerializeField] Text waveDownText;
+
 
     // Start is called before the first frame update
     void Start()
     { 
         currentTime = startingTime;
         StartCoroutine(countDownSlow());
+
+        currentWave = startingWave;
     }
 
     // Update is called once per frame
     void Update()
     {        
-        countDownText.text = "T I M E   T O   N E X T   W A V E: " + currentTime.ToString();
-        if(currentTime == 0)
+        countDownText.text = currentTime.ToString();
+        waveDownText.text = currentWave.ToString();
+        if (currentTime == 0)
         {
             currentTime = 30f;
+            currentWave--;
         }
+        
+        if(currentTime < 6)
+        {
+            countDownText.color = Color.red;
+        }
+        else
+        {
+            countDownText.color = Color.white;
+        }
+        
 
     }
 

@@ -17,6 +17,7 @@ TagManager:
   - player
   - Background
   - ScreenShake
+  - canvas
   layers:
   - Default
   - TransparentFX
