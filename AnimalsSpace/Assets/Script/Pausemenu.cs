@@ -6,17 +6,25 @@ public class Pausemenu : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUi;
+   // public GameObject pauseMenuUi;
 
     //music manager
-    public MusicManager music;
+   // public MusicManager music;
+
+    //music boss
+   // private MusicBoss boss;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        /*boss = GameObject.FindGameObjectWithTag("music").GetComponent<MusicBoss>();*/
+    }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        /*if(boss.gameOverMenu == false && Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            if(GameIsPaused)
+            if (GameIsPaused)
             {
                 Time.timeScale = 1f;
                 Resume();
@@ -24,22 +32,52 @@ public class Pausemenu : MonoBehaviour
             else
             {
                 Time.timeScale = 0f;
-                Pause();
+                BossPause();
             }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+            {
+                if (GameIsPaused)
+                {
+                    Time.timeScale = 1f;
+                    Resume();
+                }
+                else
+                {
+                    Time.timeScale = 0f;
+                    Pause();
+                }
+            }
+        }*/
+        
     }
 
-    public void Resume()
+    /*public void Resume()
     {
         music.audiosource.Play();
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }*/
+    /*public void Pause()
+    {
+        if(music == null)
+        {
+
+        }
+        else
+        {
+            music.audiosource.Pause();
+            pauseMenuUi.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
     }
 
-    public void Pause()
+    public void BossPause()
     {
-        music.audiosource.Pause();
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -49,6 +87,6 @@ public class Pausemenu : MonoBehaviour
     {
         Debug.Log("quitt");
         Application.Quit();
-    }
+    }*/
 
 }

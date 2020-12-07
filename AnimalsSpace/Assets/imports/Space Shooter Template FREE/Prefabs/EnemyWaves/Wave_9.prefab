@@ -139,8 +139,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 6858318083857594966, guid: 44b4622e58109ea4cbbddc9e95644edf, type: 3}
-  - {fileID: 1373690366928948, guid: fdaaab53a8b4c0143b19d2a2e4007e44, type: 3}
+  - {fileID: 4275709427999997530, guid: dc8e1bfd1e69fe942aa0f39d0ff7b51c, type: 3}
+  - {fileID: 6877484267840816828, guid: fd975a7a86ae2b94fbe93c36cc1ff901, type: 3}
+  - {fileID: 1685059670527632696, guid: 06da69177d59a054c8a5f79f16b64a26, type: 3}
+  - {fileID: 8416826311346057212, guid: 1143b6470618de948a10c6c0ccfa1c8c, type: 3}
+  - {fileID: 8674590951894330465, guid: eae959b4f92ce1146acdf177dbf0d3a1, type: 3}
+  - {fileID: 1208188408846748637, guid: 6068e98c488bc1d40b0bd5c9c0bf0d33, type: 3}
   count: 15
   speed: 25
   timeBetween: 1

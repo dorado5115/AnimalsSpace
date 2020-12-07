@@ -12,7 +12,7 @@ public class MusicBoss : MonoBehaviour
     public GameObject gameOverMenu;
 
     //player
-    private PlayerShooting playerShooting;
+    //private PlayerShooting playerShooting;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class MusicBoss : MonoBehaviour
         audiosource = GetComponent<AudioSource>();
         audiosource.loop = true;
 
-        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
+        //playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
     }
 
     // Update is called once per frame
@@ -36,6 +36,14 @@ public class MusicBoss : MonoBehaviour
             audiosource.PlayOneShot(deathSound, 0.3f);
             StartCoroutine(Stop());
         }
+    }
+
+    public void BossScene()
+    {
+        /*audiosource.Stop();
+        audiosource.loop = false;
+        audiosource.PlayOneShot(deathSound, 0.3f);*/
+        StartCoroutine(Stop());
     }
 
     IEnumerator Stop()

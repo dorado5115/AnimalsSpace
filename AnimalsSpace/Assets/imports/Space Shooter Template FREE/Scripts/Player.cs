@@ -13,10 +13,14 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
-    public MusicBoss musicMaganer;
+    public MusicManager music;
 
     //shake
     private shake shake;
+
+    //game over main menu
+    public bool playerDied = false;
+
 
     private void Awake()
     {
@@ -32,18 +36,43 @@ public class Player : MonoBehaviour
     //method for damage proceccing by 'Player'
     public void GetDamage(int damage)   
     {
+        //Destruction2();
         Destruction();
     }    
+
+    public void TakeDamage(int damage)
+    {
+        Des2();
+    }
 
     //'Player's' destruction procedure
     void Destruction()
     {
         shake.ShakeCamera2();
         Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
-        musicMaganer.PlayerDeath = true;
+        music.PlayerDeath = true;
         Destroy(gameObject);
     }
+
+    void Des2()
+    {
+        playerDied = true;
+        shake.ShakeCamera2();
+        Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
+        Destroy(gameObject);
+    }
+
+/*    void Destruction2()
+    {
+        shake.ShakeCamera2();
+        Instantiate(destructionFX, transform.position, Quaternion.identity); //generating destruction visual effect and destroying the 'Player' object
+        playerDied = true;
+        Destroy(gameObject);
+        music.PlayerDeath = true;
+        
+    }*/
 }
+
 
 
 

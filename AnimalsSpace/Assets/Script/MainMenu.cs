@@ -15,18 +15,44 @@ public class MainMenu : MonoBehaviour
     //Boss level
     private int bossLevel;
 
+    //game over
+    private Player player;
+    private MusicBoss boss;
+
+
+    int nextlevel;
+
     // Start is called before the first frame update
     void Start()
     {
+
+
         game = SceneManager.GetActiveScene().buildIndex + 1;
         thisScene = SceneManager.GetActiveScene().buildIndex;
 
         bossLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+        nextlevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+        boss = GameObject.FindGameObjectWithTag("music").GetComponent<MusicBoss>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    private void Update()
+    {
+        if(player.playerDied == true)
+        {
+            Die();
+        }
+        else
+        {
+
+        }
     }
 
     public void PlayGame()
     {
-        StartCoroutine(Loadlevel(game));
+        StartCoroutine(Loadlevel(nextlevel));
     }
 
     public void QuitGame()
@@ -57,6 +83,15 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadBossLevel());
     }
 
+    public void Die()
+    {
+        boss.BossScene();
+    }
+
+    public void Credits()
+    {
+        StartCoroutine(Loadlevel(bossLevel));
+    }
 
     IEnumerator Loadlevel(int level)
     {
